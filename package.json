@@ -1,0 +1,15 @@
+{
+  "name": "pint-and-pillage-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^0.9.21",
+    "sleep": "^6.1.0"
+  }
+}
