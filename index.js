@@ -1,4 +1,5 @@
 const pw = require('playwright');
+require('dotenv').config();
 
 (async () => {
     const browser = await pw.chromium.launch();
@@ -10,7 +11,7 @@ const pw = require('playwright');
     });
 
     const page = await context.newPage('https://pintandpillage.nl/login');
-    
+
     await login(page);
     await upgradeAllTiles(page, 0);
 
@@ -42,7 +43,7 @@ const pw = require('playwright');
 
 async function upgradeAllTiles(page, i) {
     const tiles = await page.$$('.tile');
-        
+
     for (let j = 0; j < tiles.length; j++) {
         const tile = tiles[j];
 
@@ -71,10 +72,10 @@ async function upgradeAllTiles(page, i) {
 
 async function login(page) {
     const username = await page.$('input.inputField:nth-child(1)');
-    await username.type('vblinden');
+    await username.type(process.env.PAP_USERNAME);
 
     const password = await page.$('input.inputField:nth-child(2)');
-    await password.type('');
+    await password.type(process.env.PAP_PASSWORD);
 
     const submitButton = await page.$('.submitButton');
     await submitButton.click();

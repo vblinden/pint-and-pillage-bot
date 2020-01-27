@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "playwright": "^0.9.21",
     "sleep": "^6.1.0"
   }
