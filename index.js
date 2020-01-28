@@ -1,5 +1,6 @@
 const pw = require('playwright');
 const schedule = require('node-schedule');
+require('dotenv').config();
 
 schedule.scheduleJob('*/15 * * * *', () => {
     (async () => {
@@ -12,7 +13,9 @@ schedule.scheduleJob('*/15 * * * *', () => {
         });
 
         const page = await context.newPage('https://pintandpillage.nl/login');
+
         await login(page);
+        await upgradeAllTiles(page, 0);
 
         console.log(`Checking current village`);
         await upgradeAllTiles(page, 0);
@@ -73,10 +76,10 @@ schedule.scheduleJob('*/15 * * * *', () => {
 
     async function login(page) {
         const username = await page.$('input.inputField:nth-child(1)');
-        await username.type('vblinden');
+        await username.type(process.env.PAP_USERNAME);
 
         const password = await page.$('input.inputField:nth-child(2)');
-        await password.type('FackingRetard123!');
+        await password.type(process.env.PAP_PASSWORD);
 
         const submitButton = await page.$('.submitButton');
         await submitButton.click();
