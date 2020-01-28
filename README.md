@@ -1,5 +1,5 @@
 # Pint and Pillage bot
-Bot for [Pint and Pillage](https://pintandpillage.nl)
+This is a (just for fun) bot for [Pint and Pillage](https://pintandpillage.nl). This bot will upgrade every building in every village you have.
 
 ## How to use
 1. Make a copy of the `.env.example` file and name it `.env`
