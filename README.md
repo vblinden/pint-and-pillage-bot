@@ -1,3 +1,7 @@
+## Unmaintained/archived
+
+This repository is unmaintained/archived. This small fun project was made a long time ago, and I can't guarantee the working any more because I am not playing this game actively.
+
 # Pint and Pillage bot
 This is a (just for fun) bot for [Pint and Pillage](https://pintandpillage.nl). This bot will upgrade every building in every village you have.
 
